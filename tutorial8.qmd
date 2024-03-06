@@ -20,7 +20,6 @@ bibliography: references.bib
 #| message: false
 
 # Load packages
-library(readstata13)
 library(readr)
 library(knitr)
 library(kableExtra)
