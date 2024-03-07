@@ -34,7 +34,6 @@ In particular, the study used a nonparametric response model to treat variables 
 Overall then, the paper contributes to the minimization of nonignorable nonresponse in data sampling, through advocating for propensity score adjustments. Despite focusing solely on modelling the characteristics of survey respondents and the study variables, the results still proved that the model is robust even when "the model for respondents is misspecified" or that some surveyees haven't responded to the survey [@rNonignorable]. The model works exceptionally well for categorical data. For continuous data, the model works well but might need to be refined based on the scope of the data as some continuous datasets can be difficult to manipulate. Still, the method and model, while efficient, can benefit from adding further calibration constraints or adjustments that make estimates more accurate by aligning them with known or expected values [@rNonignorable].
 
 
-
 \newpage
 
 
