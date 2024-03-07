@@ -1,5 +1,5 @@
 ---
-title: "Nonresponse Rates and Nonresponse Adjustments"
+title: "How to Address Nonignorable Nonresponse in Data Collection?"
 author: Quang Mai
 thanks: "Data is at: https://github.com/ponolite/tutorial8.git"
 date: today
@@ -7,22 +7,33 @@ date-format: long
 format: pdf
 fig-pos: 'H'
 toc: true
-number-sections: true
 bibliography: references.bib
 ---
 
 # Introduction 
 
-Please consider the Special Virtual Issue on Nonresponse Rates and Nonresponse Adjustments of the Journal of Survey Statistics and Methodology. Focus on one aspect of the editorial, and with reference to relevant literature, please discuss it in at least two pages. Use Quarto, and include an appropriate title, author, date, link to a GitHub repo, and citations. Submit a PDF.
-
-This discussion paper was generated using the open-source statistical programming language R [@r].
-
-
 The editorial of "Special Virtual Issue on Nonresponse Rates and Nonresponse Adjustments" from the Journal of Survey Statistics and Methodology mainly talks about ways to go about unit and item nonresponse in data collection [@rArticle]. To be specific, unit nonresponse occurs when a member of the data sample doesn't respond to the survey, while item nonresponse happens when a member of the data sample fails to respond to one or more survey items that they are eligible to answer.
 
-In order to negate unit and item non-response, the editorial stresses on the importance of understanding "survey response mechanism" [@rArticle]. This is crucial when current trends point towards decreasing response rates accross various data collection modes due to the prominence of web surveys. To address nonresponse bias, the editorial stresses identifying "auxiliary variables" that mediate both nonresponse and key survey variables [@rArticle]. The editorial thus curates a list of papers that tackle the topic of nonresponse adjustments. From nonresponse propensity models, mutiple imputations (meaning replacing missing values with plausible numbers derived from distributions of observed variables in the data set) to post-data collection adjustments (e.g. calibration weighting), the editorial highlights the need for non-response adjustments.
+In order to negate unit and item non-response, the editorial stresses on the importance of understanding "survey response mechanism" [@rArticle]. This is crucial when current trends point towards decreasing response rates accross various data collection methods due to the prominence of web surveys. To address nonresponse bias, the editorial stresses identifying "auxiliary variables" or in-between varaibles mediate both nonresponse and key survey variables [@rArticle]. The editorial thus curates a list of papers that tackle the topic of nonresponse adjustments. From nonresponse propensity models, mutiple imputations (meaning replacing missing values with plausible numbers derived from distributions of observed variables in the data set) to post-data collection adjustments (e.g. calibration weighting), the editorial highlights the need for non-response adjustments.
 
 One paper in particular, "A Propensity-score-adjustment Method for Nonignorable Nonresponse" is interesting as it tackles 'nonignorable' nonresponse in surveys and how to address them in data collection [@rNonignorable].
+
+To note, this discussion paper was generated using the open-source statistical programming language R [@r].
+
+# Nonignorable Response
+
+In large, the paper outlines how nonresponse is a significant issue in sample surveys, especially when participation rates in survey responses have been declining in general. While current methods to deal with nonresponse are numerous, ranging from weighting adjustments, regression weighting and more, these adjustment methods still assume nonresponse to be ignorable missing data, which is oftentimes untrue [@rNonignorable]. The paper thus proposes a new method to address nonignorable nonresponse data, namely "parametric model assumptions, or propensity score models, about the study variable among respondents only" [@rNonignorable]. In particular, to account for nonignorable nonresponse, the paper privileges using importance sampling on the distribution of the respondents to account for nonignorable nonresponse. In simple terms, this means focusing on analyzing observable responses from the data collection to extrapolate on nonignorable missing data. Overall then, the paper indicates the theoretical framework and presents results from the simulation studies and addresses on how this approach can apply to real-world data.
+
+
+In short, propensity score model is a way to figure out the best guess for a dependent varaible's parameter. Thus, to account for nonignorable nonresponse in data collection, the paper proposes the theoretical framework that makes statisticians focus only on observable parts of the data which are the respondents and the study variable. By doing this, statisticians can then later extrapolate on parts that they can't account for, like nonignorable nonresponse. The paper especially highlights that, "the approach using the outcome model for respondent is more appealing" because it's more feasible to adjust for the unknowable nonignorable nonresponse [@rNonignorable].
+
+In order to demonstrate the model's effectiveness, the paper discusses a study in which the authors applied the method to analyze exit poll data from the 2012 South Korean legislative election. The data includes voter demographcis such as age and gender along with voting preferences. Using these variables, the authors applied the method to predict voting outcomes and adjust for nonignorable nonresponse.
+
+In particular, the study used a nonparametric response model to treat variables like gender as an instrumental variable for nonresponse. To specify, a nonparametric model directly estimates patterns from the data to analyze the data instead of following a particular mathematical formula. To prove the method's efficiency, the authors compared the proposed method's procedure and results to alternative approaches, including one without adjustment and another based on the groups with both the age and gender variables. Results showed that the proposed method provided accurate estimates of voting outcomes compared to the alternatives, indicating its effectiveness in predicting election results.
+
+Overall then, the paper contributes to the minimization of nonignorable nonresponse in data sampling, through advocating for propensity score adjustments. Despite focusing solely on modelling the characteristics of survey respondents and the study variables, the results still proved that the model is robust even when "the model for respondents is misspecified" or that some surveyees haven't responded to the survey [@rNonignorable]. The model works exceptionally well for categorical data. For continuous data, the model works well but might need to be refined based on the scope of the data as some continuous datasets can be difficult to manipulate. Still, the method and model, while efficient, can benefit from adding further calibration constraints or adjustments that make estimates more accurate by aligning them with known or expected values [@rNonignorable].
+
+
 
 \newpage
 
